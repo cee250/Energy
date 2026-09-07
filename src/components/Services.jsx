@@ -1,97 +1,124 @@
 import React from 'react';
-import { Sun, Building2, BatteryCharging, Droplets, ArrowRight, Check } from 'lucide-react';
+import { Sun, Building2, BatteryCharging, Droplets, Image as ImageIcon, Check } from 'lucide-react';
 
 export default function Services({ onOpenQuote }) {
   const serviceList = [
     {
+      id: 'solar-pv',
       icon: Sun,
       title: 'Solar Panel Installation',
-      subtitle: 'Commercial & Residential Photovoltaic PV Systems',
-      description: 'Turnkey solar design, equipment procurement, and structural rooftop installation using high-efficiency Tier-1 monocrystalline panels.',
+      subtitle: 'Commercial & Residential Photovoltaic PV',
+      description: 'Turnkey solar design, equipment procurement, and rooftop installation using monocrystalline Tier-1 modules.',
+      imageTag: '📷 Solar Panel Installation Photo Placeholder (16:9)',
       points: [
-        'Monocrystalline PV Panels (>22.5% Efficiency)',
-        'Commercial Rooftop & Ground-Mount Systems',
-        'Grid Net-Metering & Inverter Synchronization'
+        'High-Yield PV Modules (>22.5% Efficiency)',
+        'Commercial Rooftop & Ground-Mount',
+        'Grid Net-Metering & Inverter Sync'
       ]
     },
     {
+      id: 'c-and-i',
       icon: Building2,
       title: 'C&I Microgrids & PPAs',
       subtitle: 'Zero-CAPEX Power Purchase Agreements',
-      description: 'Fully financed megawatt solar installations for commercial enterprises and industrial plants with zero upfront capital expenditure.',
+      description: 'Fully financed megawatt solar installations for commercial enterprises and industrial manufacturing facilities.',
+      imageTag: '📷 Commercial Industrial Microgrid Photo Placeholder (16:9)',
       points: [
-        '$0 Upfront Capital Investment Required',
-        '20–40% Guaranteed Energy Tariff Discount',
-        'Peak-Shaving & Demand Charge Cut'
+        '$0 Upfront Capital Investment',
+        '20–40% Energy Tariff Discount',
+        'Peak Shaving & Demand Cut'
       ]
     },
     {
+      id: 'bess',
       icon: BatteryCharging,
       title: 'Battery Energy Storage (BESS)',
-      tagline: '24/7 Power Reserve & Night Displacement',
-      description: 'Scalable LFP battery storage systems that store daytime solar energy to power night shifts and critical backup loads.',
+      subtitle: '24/7 Power Reserve & Night Displacement',
+      description: 'Scalable Lithium Iron Phosphate (LiFePO4) battery storage systems that store daytime solar energy for night shifts.',
+      imageTag: '📷 Battery Storage (BESS) Array Photo Placeholder (16:9)',
       points: [
-        'Scalable Storage from 100 kWh to 50+ MWh',
-        'Uninterruptible Power Supply (UPS) Transfer',
+        'Storage Capacity 100 kWh to 50+ MWh',
+        'Uninterruptible Power Supply (UPS)',
         'Time-of-Use Tariff Arbitrage'
       ]
     },
     {
+      id: 'water-pumping',
       icon: Droplets,
       title: 'Solar Water Pumping',
       subtitle: 'Agricultural Irrigation & Water Supply',
-      description: 'High-head DC and AC solar powered water pumps engineered for agricultural irrigation, livestock farming, and community water supply.',
+      description: 'High-head DC and AC solar powered water pumps engineered for agricultural irrigation and community water supply.',
+      imageTag: '📷 Solar Water Pumping System Photo Placeholder (16:9)',
       points: [
-        'Zero Fuel Costs for Farmers',
-        'High-Flow Submersible Solar Pumps',
+        'Zero Fuel Expenses for Farmers',
+        'High-Flow Submersible Pumps',
         'Automated Tank Level Controls'
       ]
     }
   ];
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-slate-50 border-b border-slate-100">
+    <section id="services" className="py-16 md:py-20 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
+        {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-100 px-3 py-1 rounded-full">
+          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
             Our Core Services
           </span>
           <h2 className="text-3xl font-extrabold text-slate-900 mt-3">
             Renewable Energy Solutions
           </h2>
           <p className="mt-3 text-slate-600 text-base">
-            Engineered specifically for commercial businesses, industrial facilities, and agricultural projects.
+            Engineered for commercial businesses, industrial facilities, resorts, and agricultural projects.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {serviceList.map((s, idx) => {
+        {/* Service Cards with Image Placeholders */}
+        <div className="grid md:grid-cols-2 gap-8">
+          {serviceList.map((s) => {
             const IconComp = s.icon;
             return (
-              <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
-                <div>
-                  <div className="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold mb-3">
-                    <IconComp className="w-6 h-6" />
+              <div key={s.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-5">
+                <div className="space-y-4">
+                  {/* SERVICE IMAGE PLACEHOLDER SLOT */}
+                  <div className="aspect-[16/9] rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-center p-4 hover:border-emerald-500 transition-colors group cursor-pointer">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-emerald-600 shadow-xs mb-2 group-hover:scale-105 transition-transform">
+                      <ImageIcon className="w-5 h-5" />
+                    </div>
+                    <p className="text-xs font-bold text-slate-800">{s.imageTag}</p>
+                    <span className="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded mt-2">
+                      Image Slot (Replace with Service Photo)
+                    </span>
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-1">{s.title}</h3>
-                  <p className="text-xs text-slate-600 mb-3">{s.description}</p>
 
-                  <div className="space-y-2 border-t border-slate-100 pt-3">
-                    {s.points.map((pt, pIdx) => (
-                      <div key={pIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
-                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                        <span>{pt}</span>
+                  {/* Service Text Details */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
+                        <IconComp className="w-4 h-4" />
                       </div>
-                    ))}
+                      <h3 className="text-xl font-bold text-slate-900">{s.title}</h3>
+                    </div>
+                    <p className="text-xs font-semibold text-emerald-700 mb-2">{s.subtitle}</p>
+                    <p className="text-xs text-slate-600 mb-3 leading-relaxed">{s.description}</p>
+
+                    <div className="space-y-1.5 border-t border-slate-100 pt-3">
+                      {s.points.map((pt, pIdx) => (
+                        <div key={pIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
+                          <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                          <span>{pt}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
 
                 <button
                   onClick={onOpenQuote}
-                  className="w-full text-center py-2.5 bg-slate-50 hover:bg-emerald-600 hover:text-white text-slate-700 font-bold text-xs rounded-xl border border-slate-200 transition-colors"
+                  className="w-full text-center py-3 bg-slate-50 hover:bg-emerald-600 hover:text-white text-slate-700 font-bold text-xs rounded-xl border border-slate-200 transition-colors"
                 >
-                  Request Proposal →
+                  Request Service Proposal →
                 </button>
               </div>
             );
