@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
 import Projects from './components/Projects';
-import SolarCalculator from './components/SolarCalculator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { X, Zap } from 'lucide-react';
@@ -27,18 +26,17 @@ export default function App() {
         onOpenQuote={openQuoteModal}
       />
 
-      {/* Sections */}
-      <main>
+      {/* Main Content Sections (pt-16 accounts for fixed navbar) */}
+      <main className="pt-14">
         <Hero onOpenQuote={openQuoteModal} />
         <AboutUs />
         <Services onOpenQuote={openQuoteModal} />
         <Projects onOpenQuote={openQuoteModal} />
-        <SolarCalculator onOpenQuote={openQuoteModal} />
         <Contact />
       </main>
 
-      {/* Footer */}
-      <Footer onOpenQuote={openQuoteModal} />
+      {/* Compact Footer */}
+      <Footer />
 
       {/* Quote Request Modal */}
       {isQuoteModalOpen && (
@@ -56,13 +54,13 @@ export default function App() {
                 <Zap className="w-4 h-4" />
               </div>
               <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-                Renewable Energy Quote
+                Renewable Energy Proposal
               </span>
             </div>
 
             <h3 className="text-xl font-bold text-slate-900 mb-1">Request Proposal</h3>
             <p className="text-xs text-slate-500 mb-5">
-              Fill out your details to receive an estimated solar proposal.
+              Fill out your details to receive a customized solar proposal.
             </p>
 
             <Contact isModal={true} onClose={closeQuoteModal} />
