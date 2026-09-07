@@ -18,8 +18,8 @@ export default function App() {
   const closeQuoteModal = () => setIsQuoteModalOpen(false);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-emerald-500 selection:text-slate-950">
-      {/* Top Bar & Navigation Header */}
+    <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-emerald-500 selection:text-white">
+      {/* Header */}
       <TopBar />
       <Navbar
         activeSection={activeSection}
@@ -27,7 +27,7 @@ export default function App() {
         onOpenQuote={openQuoteModal}
       />
 
-      {/* Main Sections */}
+      {/* Sections */}
       <main>
         <Hero onOpenQuote={openQuoteModal} />
         <AboutUs />
@@ -40,30 +40,29 @@ export default function App() {
       {/* Footer */}
       <Footer onOpenQuote={openQuoteModal} />
 
-      {/* Global Proposal Request Modal */}
+      {/* Quote Request Modal */}
       {isQuoteModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fadeIn">
-          <div className="relative w-full max-w-2xl bg-slate-950 rounded-3xl border border-slate-800 shadow-2xl p-6 sm:p-8 max-h-[90vh] overflow-y-auto glow-emerald">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-fadeIn">
+          <div className="relative w-full max-w-xl bg-white rounded-2xl border border-slate-200 shadow-2xl p-6 max-h-[90vh] overflow-y-auto">
             <button
               onClick={closeQuoteModal}
-              className="absolute top-4 right-4 p-2 text-slate-400 hover:text-white hover:bg-slate-900 rounded-full border border-slate-800"
-              aria-label="Close modal"
+              className="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-full border border-slate-200"
             >
               <X className="w-5 h-5" />
             </button>
 
             <div className="flex items-center gap-2 mb-2">
-              <div className="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+              <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
                 <Zap className="w-4 h-4" />
               </div>
-              <span className="text-xs font-bold text-emerald-400 uppercase tracking-widest">
-                Fast-Track Feasibility Request
+              <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
+                Renewable Energy Quote
               </span>
             </div>
 
-            <h3 className="text-2xl font-bold text-white mb-2">Request Technical Solar Proposal</h3>
-            <p className="text-xs text-slate-400 mb-6">
-              Complete your facility profile to receive an engineered solar PV blueprint and financial payback model within 4 hours.
+            <h3 className="text-xl font-bold text-slate-900 mb-1">Request Proposal</h3>
+            <p className="text-xs text-slate-500 mb-5">
+              Fill out your details to receive an estimated solar proposal.
             </p>
 
             <Contact isModal={true} onClose={closeQuoteModal} />

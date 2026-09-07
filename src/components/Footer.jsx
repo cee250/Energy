@@ -1,114 +1,57 @@
 import React from 'react';
-import { Sun, Shield, Award, Linkedin, Twitter, Youtube, ArrowRight } from 'lucide-react';
+import { Sun, Phone, Mail } from 'lucide-react';
 
 export default function Footer({ onOpenQuote }) {
+  const scrollTo = (id) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-sm">
-      
-      {/* Newsletter */}
-      <div className="border-b border-slate-800/80 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl font-bold text-white">Subscribe to Energy Market Intelligence</h3>
-            <p className="text-xs text-slate-400 mt-1">Receive quarterly C&I solar tariff updates, storage innovations, and decarbonization reports.</p>
-          </div>
-
-          <div className="flex w-full md:w-auto gap-2">
-            <input
-              type="email"
-              placeholder="Enter corporate email"
-              className="bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-400 w-full sm:w-64"
-            />
-            <button className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs transition-colors shrink-0">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Main Sitemap */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-2 md:grid-cols-5 gap-8">
+    <footer className="bg-slate-900 text-slate-400 text-xs border-t border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-1 sm:grid-cols-3 gap-8">
         
-        {/* Brand */}
-        <div className="col-span-2 space-y-4">
+        <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-bold">
-              <Sun className="w-5 h-5" />
+            <div className="w-7 h-7 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center font-bold">
+              <Sun className="w-4 h-4" />
             </div>
-            <span className="font-extrabold text-xl text-white tracking-tight">AuraGrid Energy</span>
+            <span className="font-extrabold text-base text-white tracking-tight">AuraGrid Energy</span>
           </div>
-
-          <p className="text-xs leading-relaxed text-slate-400 max-w-sm">
-            Empowering enterprise sustainability with turn-key commercial and industrial (C&I) solar panel installations, megawatt-scale battery energy storage systems, and zero-CAPEX power purchase agreements.
+          <p className="text-slate-400 text-xs max-w-xs leading-relaxed">
+            Turnkey solar panel installation, C&I microgrids, and energy storage solutions.
           </p>
-
-          <div className="flex items-center gap-3 pt-2">
-            <a href="#" className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
-              <Linkedin className="w-4 h-4" />
-            </a>
-            <a href="#" className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
-              <Twitter className="w-4 h-4" />
-            </a>
-            <a href="#" className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
-              <Youtube className="w-4 h-4" />
-            </a>
-          </div>
         </div>
 
-        {/* Quick Links */}
-        <div className="space-y-3">
-          <h4 className="text-xs font-bold text-white uppercase tracking-wider">Navigation</h4>
-          <ul className="space-y-2 text-xs">
-            <li><a href="#home" className="hover:text-emerald-400 transition-colors">Home</a></li>
-            <li><a href="#about" className="hover:text-emerald-400 transition-colors">About Us</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Our Services</a></li>
-            <li><a href="#projects" className="hover:text-emerald-400 transition-colors">Deployments</a></li>
-            <li><a href="#calculator" className="hover:text-emerald-400 transition-colors">Solar ROI Calculator</a></li>
-            <li><a href="#contact" className="hover:text-emerald-400 transition-colors">Contact Us</a></li>
+        <div className="space-y-2">
+          <h4 className="font-bold text-white uppercase tracking-wider text-xs">Quick Links</h4>
+          <ul className="space-y-1.5 text-xs">
+            <li><button onClick={() => scrollTo('home')} className="hover:text-emerald-400">Home</button></li>
+            <li><button onClick={() => scrollTo('about')} className="hover:text-emerald-400">About Us</button></li>
+            <li><button onClick={() => scrollTo('services')} className="hover:text-emerald-400">Services</button></li>
+            <li><button onClick={() => scrollTo('projects')} className="hover:text-emerald-400">Projects</button></li>
+            <li><button onClick={() => scrollTo('calculator')} className="hover:text-emerald-400">Calculator</button></li>
+            <li><button onClick={() => scrollTo('contact')} className="hover:text-emerald-400">Contact</button></li>
           </ul>
         </div>
 
-        {/* Services */}
-        <div className="space-y-3">
-          <h4 className="text-xs font-bold text-white uppercase tracking-wider">Core Solutions</h4>
-          <ul className="space-y-2 text-xs">
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Commercial Rooftop PV</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Industrial Microgrids</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Battery Storage (BESS)</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Solar Water Pumping</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">EV Fleet Charging</a></li>
-          </ul>
-        </div>
-
-        {/* Certifications */}
-        <div className="space-y-3">
-          <h4 className="text-xs font-bold text-white uppercase tracking-wider">Certifications</h4>
-          <div className="space-y-2 text-xs">
-            <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
-              <Shield className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>ISO 9001:2015 Quality</span>
-            </div>
-            <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
-              <Award className="w-4 h-4 text-amber-400 shrink-0" />
-              <span>BloombergNEF Tier-1</span>
-            </div>
-          </div>
+        <div className="space-y-2">
+          <h4 className="font-bold text-white uppercase tracking-wider text-xs">Contact Us</h4>
+          <p className="flex items-center gap-2 text-slate-300">
+            <Phone className="w-3.5 h-3.5 text-emerald-400" />
+            <span>+250 788 300 000</span>
+          </p>
+          <p className="flex items-center gap-2 text-slate-300">
+            <Mail className="w-3.5 h-3.5 text-emerald-400" />
+            <span>info@energy.com</span>
+          </p>
         </div>
 
       </div>
 
-      {/* Bottom Bar */}
-      <div className="border-t border-slate-800/80 py-6 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} AuraGrid Energy Inc. All Rights Reserved.</p>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">ESG Disclosures</a>
-          </div>
-        </div>
+      <div className="border-t border-slate-800 py-4 bg-slate-950 text-center text-slate-500 text-[11px]">
+        © {new Date().getFullYear()} AuraGrid Energy. All Rights Reserved.
       </div>
-
     </footer>
   );
 }
