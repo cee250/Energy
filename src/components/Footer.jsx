@@ -1,29 +1,57 @@
 import React from 'react';
-import { Sun, Shield, Award, Linkedin, Twitter, Mail, Phone, MapPin, Leaf } from 'lucide-react';
+import { Sun, Shield, Award, Linkedin, Twitter, Youtube, ArrowRight } from 'lucide-react';
 
 export default function Footer({ onOpenQuote }) {
   return (
-    <footer className="bg-slate-900 text-slate-400 border-t border-slate-800 text-sm">
+    <footer className="bg-slate-950 text-slate-400 border-t border-slate-800 text-sm">
       
-      {/* Sitemap */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        {/* Brand */}
-        <div className="space-y-4">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-bold">
-              <Leaf className="w-5 h-5" />
-            </div>
-            <span className="font-extrabold text-xl text-white tracking-tight">RENERG Rwanda Ltd</span>
+      {/* Newsletter */}
+      <div className="border-b border-slate-800/80 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 className="text-xl font-bold text-white">Subscribe to Energy Market Intelligence</h3>
+            <p className="text-xs text-slate-400 mt-1">Receive quarterly C&I solar tariff updates, storage innovations, and decarbonization reports.</p>
           </div>
 
-          <p className="text-xs leading-relaxed text-slate-400">
-            Leading provider of renewable energy solutions in Rwanda and East Africa. Specializing in solar energy, solar water pumping, e-mobility, and smart real estate.
+          <div className="flex w-full md:w-auto gap-2">
+            <input
+              type="email"
+              placeholder="Enter corporate email"
+              className="bg-slate-900 border border-slate-800 rounded-xl px-4 py-2.5 text-white text-sm focus:outline-none focus:border-emerald-400 w-full sm:w-64"
+            />
+            <button className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold px-5 py-2.5 rounded-xl text-xs transition-colors shrink-0">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Sitemap */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 grid grid-cols-2 md:grid-cols-5 gap-8">
+        
+        {/* Brand */}
+        <div className="col-span-2 space-y-4">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-emerald-500 flex items-center justify-center text-slate-950 font-bold">
+              <Sun className="w-5 h-5" />
+            </div>
+            <span className="font-extrabold text-xl text-white tracking-tight">AuraGrid Energy</span>
+          </div>
+
+          <p className="text-xs leading-relaxed text-slate-400 max-w-sm">
+            Empowering enterprise sustainability with turn-key commercial and industrial (C&I) solar panel installations, megawatt-scale battery energy storage systems, and zero-CAPEX power purchase agreements.
           </p>
 
-          <div className="pt-2 flex items-center gap-2 text-amber-400 text-xs font-semibold">
-            <Award className="w-4 h-4 shrink-0" />
-            <span>Winner: 2019 Beat Air Pollution Award</span>
+          <div className="flex items-center gap-3 pt-2">
+            <a href="#" className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+              <Linkedin className="w-4 h-4" />
+            </a>
+            <a href="#" className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+              <Twitter className="w-4 h-4" />
+            </a>
+            <a href="#" className="w-8 h-8 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-800 flex items-center justify-center text-slate-400 hover:text-white transition-colors">
+              <Youtube className="w-4 h-4" />
+            </a>
           </div>
         </div>
 
@@ -34,7 +62,7 @@ export default function Footer({ onOpenQuote }) {
             <li><a href="#home" className="hover:text-emerald-400 transition-colors">Home</a></li>
             <li><a href="#about" className="hover:text-emerald-400 transition-colors">About Us</a></li>
             <li><a href="#services" className="hover:text-emerald-400 transition-colors">Our Services</a></li>
-            <li><a href="#projects" className="hover:text-emerald-400 transition-colors">Rwanda Projects</a></li>
+            <li><a href="#projects" className="hover:text-emerald-400 transition-colors">Deployments</a></li>
             <li><a href="#calculator" className="hover:text-emerald-400 transition-colors">Solar ROI Calculator</a></li>
             <li><a href="#contact" className="hover:text-emerald-400 transition-colors">Contact Us</a></li>
           </ul>
@@ -44,42 +72,39 @@ export default function Footer({ onOpenQuote }) {
         <div className="space-y-3">
           <h4 className="text-xs font-bold text-white uppercase tracking-wider">Core Solutions</h4>
           <ul className="space-y-2 text-xs">
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Solar Energy (On & Off Grid)</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Solar Water Pumping & Irrigation</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">E-Mobility & EV Chargers</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Smart Real Estate & Green Buildings</a></li>
-            <li><a href="#services" className="hover:text-emerald-400 transition-colors">EPC & Plant Maintenance</a></li>
+            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Commercial Rooftop PV</a></li>
+            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Industrial Microgrids</a></li>
+            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Battery Storage (BESS)</a></li>
+            <li><a href="#services" className="hover:text-emerald-400 transition-colors">Solar Water Pumping</a></li>
+            <li><a href="#services" className="hover:text-emerald-400 transition-colors">EV Fleet Charging</a></li>
           </ul>
         </div>
 
-        {/* Contact info */}
+        {/* Certifications */}
         <div className="space-y-3">
-          <h4 className="text-xs font-bold text-white uppercase tracking-wider">Kigali Office</h4>
-          <div className="space-y-2 text-xs text-slate-300">
-            <p className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Kigali, Rwanda & East Africa</span>
-            </p>
-            <p className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>+250 788 300 000</span>
-            </p>
-            <p className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>info@renerg.co.rw</span>
-            </p>
+          <h4 className="text-xs font-bold text-white uppercase tracking-wider">Certifications</h4>
+          <div className="space-y-2 text-xs">
+            <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
+              <Shield className="w-4 h-4 text-emerald-400 shrink-0" />
+              <span>ISO 9001:2015 Quality</span>
+            </div>
+            <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-2">
+              <Award className="w-4 h-4 text-amber-400 shrink-0" />
+              <span>BloombergNEF Tier-1</span>
+            </div>
           </div>
         </div>
 
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-slate-800 py-6 bg-slate-950">
+      <div className="border-t border-slate-800/80 py-6 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <p>© {new Date().getFullYear()} RENERG (R) LTD. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} AuraGrid Energy Inc. All Rights Reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-white transition-colors">ESG Disclosures</a>
           </div>
         </div>
       </div>
