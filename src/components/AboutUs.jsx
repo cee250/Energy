@@ -68,7 +68,7 @@ export default function AboutUs() {
               
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xs border border-slate-200 relative group">
                 <img
-                  src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80"
+                  src="/images/solar-rooftop.jpg"
                   alt="Commercial Solar PV Arrays"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -79,7 +79,7 @@ export default function AboutUs() {
 
               <div className="aspect-[4/5] rounded-2xl overflow-hidden shadow-xs border border-slate-200 relative group mt-6">
                 <img
-                  src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80"
+                  src="/images/solar-panels.jpg"
                   alt="Monocrystalline Solar Panel Technology"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />

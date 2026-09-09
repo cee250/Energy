@@ -9,7 +9,7 @@ export default function Services({ onOpenQuote }) {
       title: 'Solar Panel Installation',
       subtitle: 'Commercial & Residential Photovoltaic PV',
       description: 'Turnkey solar design, equipment procurement, and rooftop installation using monocrystalline Tier-1 modules.',
-      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solar-panels.jpg',
       points: [
         'High-Yield PV Modules (>22.5% Efficiency)',
         'Commercial Rooftop & Ground-Mount',
@@ -22,7 +22,7 @@ export default function Services({ onOpenQuote }) {
       title: 'C&I Microgrids & PPAs',
       subtitle: 'Zero-CAPEX Power Purchase Agreements',
       description: 'Fully financed megawatt solar installations for commercial enterprises and industrial manufacturing facilities.',
-      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80',
+      image: '/images/solar-rooftop.jpg',
       points: [
         '$0 Upfront Capital Investment',
         '20–40% Energy Tariff Discount',
@@ -35,7 +35,7 @@ export default function Services({ onOpenQuote }) {
       title: 'Battery Energy Storage (BESS)',
       subtitle: '24/7 Power Reserve & Night Displacement',
       description: 'Scalable Lithium Iron Phosphate (LiFePO4) battery storage systems that store daytime solar energy for night shifts.',
-      image: 'https://images.unsplash.com/photo-1558441719-67450885d2b6?auto=format&fit=crop&w=800&q=80',
+      image: '/images/battery-storage.jpg',
       points: [
         'Storage Capacity 100 kWh to 50+ MWh',
         'Uninterruptible Power Supply (UPS)',
@@ -48,7 +48,7 @@ export default function Services({ onOpenQuote }) {
       title: 'Solar Water Pumping',
       subtitle: 'Agricultural Irrigation & Water Supply',
       description: 'High-head DC and AC solar powered water pumps engineered for agricultural irrigation and community water supply.',
-      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
+      image: '/images/water-pumping.jpg',
       points: [
         'Zero Fuel Expenses for Farmers',
         'High-Flow Submersible Pumps',

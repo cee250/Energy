@@ -57,22 +57,22 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
+      className={`fixed top-9 left-3 right-3 lg:left-8 lg:right-8 z-50 rounded-2xl transition-transform duration-300 ${
         visible ? 'translate-y-0' : '-translate-y-full'
       } ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200 py-3' : 'bg-white border-b border-slate-200/80 py-4'
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-xl border border-slate-200 py-3' : 'bg-white/95 backdrop-blur-md shadow-lg border border-slate-200/80 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Brand Logo */}
         <button onClick={() => scrollToSection('home')} className="flex items-center gap-2.5 group text-left">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white flex items-center justify-center font-bold shadow-xs">
+          <div className="w-10 h-10 rounded-xl bg-[#c9e86b] text-[#173f2b] flex items-center justify-center font-bold shadow-xs">
             <Sun className="w-6 h-6" />
           </div>
           <div>
             <span className="font-extrabold text-xl tracking-tight text-slate-900 block leading-none">Mashariki</span>
-            <span className="text-[10px] font-bold text-emerald-700 tracking-wider uppercase">ENERGY</span>
+            <span className="text-[10px] font-bold text-[#4d7b3a] tracking-wider uppercase">ENERGY</span>
           </div>
         </button>
 
@@ -84,7 +84,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
               onClick={() => scrollToSection(link.id)}
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                 activeSection === link.id
-                  ? 'bg-emerald-100/80 text-emerald-800 font-bold'
+                  ? 'bg-[#e8f3bf] text-[#173f2b] font-bold'
                   : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
@@ -97,7 +97,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={onOpenQuote}
-            className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-lg shadow-xs transition-colors"
+            className="bg-[#173f2b] hover:bg-[#2c6445] text-white font-bold text-xs px-5 py-2.5 rounded-full shadow-xs transition-colors"
           >
             Get a Quote
           </button>
@@ -107,7 +107,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenQuote}
-            className="bg-emerald-600 text-white text-xs font-bold px-3 py-1.5 rounded-lg"
+            className="bg-[#173f2b] text-white text-xs font-bold px-3 py-1.5 rounded-full"
           >
             Quote
           </button>

@@ -31,7 +31,7 @@ export default function WhyChooseUs({ onOpenQuote }) {
       {/* Background Subtle Overlay */}
       <div className="absolute inset-0 z-0 opacity-15">
         <img
-          src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1600&q=80"
+          src="/images/solar-hero.jpg"
           alt="Solar Background Pattern"
           className="w-full h-full object-cover"
         />
