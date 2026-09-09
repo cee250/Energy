@@ -1,24 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Sun, Menu, X } from 'lucide-react';
 
 export default function Navbar({ activeSection, setActiveSection, onOpenQuote }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [visible, setVisible] = useState(true);
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 40);
-      setScrolled(currentScrollPos > 20);
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [prevScrollPos]);
-
+  const prevScrollPos = useRef(0);
   const navLinks = [
     { name: 'Home', id: 'home' },
     { name: 'About Us', id: 'about' },
@@ -26,6 +13,38 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
     { name: 'Projects', id: 'projects' },
     { name: 'Contact', id: 'contact' },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+      setVisible(prevScrollPos.current > currentScrollPos || currentScrollPos < 40);
+      setScrolled(currentScrollPos > 20);
+      prevScrollPos.current = currentScrollPos;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = navLinks
+      .map(({ id }) => document.getElementById(id))
+      .filter(Boolean);
+    if (!sections.length) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visibleSection) setActiveSection(visibleSection.target.id);
+      },
+      { rootMargin: '-25% 0px -60% 0px', threshold: [0.1, 0.25, 0.5] },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, [setActiveSection]);
 
   const scrollToSection = (id) => {
     setActiveSection(id);
@@ -94,6 +113,8 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={mobileMenuOpen}
             className="p-2 text-slate-700 hover:text-slate-900 rounded-lg border border-slate-200"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
