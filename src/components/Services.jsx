@@ -58,12 +58,12 @@ export default function Services({ onOpenQuote }) {
   ];
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-slate-50 border-b border-slate-200">
+    <section id="services" className="py-20 md:py-28 bg-emerald-50/50 border-b border-emerald-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1 rounded-md">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1 rounded-md border border-emerald-200">
             // OUR SERVICES & CAPABILITIES
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
@@ -74,14 +74,14 @@ export default function Services({ onOpenQuote }) {
           </p>
         </div>
 
-        {/* Service Cards (Energia Style Elevated Cards with Top Accent Line) */}
+        {/* Service Cards (Elevated white cards over clean energy green background) */}
         <div className="grid md:grid-cols-2 gap-8">
           {serviceList.map((s) => {
             const IconComp = s.icon;
             return (
-              <div key={s.id} className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden group border-t-4 border-t-emerald-600">
+              <div key={s.id} className="bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden group border-t-4 border-t-emerald-600">
                 
-                {/* Image Top Banner */}
+                {/* Image (Pure Clean Technology, NO humans) */}
                 <div className="aspect-[16/9] overflow-hidden relative">
                   <img
                     src={s.image}
