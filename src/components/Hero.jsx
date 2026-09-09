@@ -33,7 +33,7 @@ export default function Hero({ onOpenQuote }) {
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#173f2b] tracking-[-0.035em] leading-[1.05]">
-              <span className="whitespace-nowrap">Turnkey</span> <span className="text-[#79a94b]">solar power</span> for a brighter tomorrow
+              <span className="whitespace-nowrap">Turn key</span> <span className="text-[#79a94b]">solar power</span> for a brighter tomorrow
             </h1>
 
             <p className="text-sm sm:text-base text-[#52645b] max-w-xl font-normal leading-relaxed">
