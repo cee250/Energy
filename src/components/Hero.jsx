@@ -1,12 +1,67 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Sun, ShieldCheck, ArrowRight, Building2 } from 'lucide-react';
+
+// Animated Count-Up Hook / Component
+function AnimatedCounter({ endValue, suffix = '', prefix = '', duration = 2000 }) {
+  const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasAnimated) {
+          setHasAnimated(true);
+          const target = parseInt(endValue, 10);
+          if (isNaN(target)) return;
+
+          const startTime = performance.now();
+
+          const animate = (currentTime) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            
+            // Ease-out quad formula
+            const easeOut = 1 - (1 - progress) * (1 - progress);
+            const current = Math.floor(easeOut * target);
+
+            setCount(current);
+
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              setCount(target);
+            }
+          };
+
+          requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) observer.unobserve(ref.current);
+    };
+  }, [endValue, duration, hasAnimated]);
+
+  return (
+    <span ref={ref}>
+      {prefix}{count}{suffix}
+    </span>
+  );
+}
 
 export default function Hero({ onOpenQuote }) {
   const stats = [
-    { value: '185+ MW', label: 'Installed Capacity' },
-    { value: '420+', label: 'Commercial Deployments' },
-    { value: '35%', label: 'Avg Utility Bill Cut' },
-    { value: '25 Yrs', label: 'Panel Performance Warranty' }
+    { target: 185, suffix: '+ MW', label: 'Installed Capacity' },
+    { target: 420, suffix: '+', label: 'Commercial Deployments' },
+    { target: 35, suffix: '%', label: 'Avg Utility Bill Cut' },
+    { target: 25, suffix: ' Yrs', label: 'Panel Performance Warranty' }
   ];
 
   const scrollTo = (id) => {
@@ -64,13 +119,13 @@ export default function Hero({ onOpenQuote }) {
             </div>
           </div>
 
-          {/* Right Column: Hero High-Res Real Solar Photo */}
+          {/* Right Column: Hero Photo */}
           <div className="lg:col-span-6">
             <div className="bg-white p-3 rounded-2xl border border-slate-200 shadow-md space-y-3">
               <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-sm">
                 <img
                   src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
-                  alt="Mashariki Energy Commercial Solar Installation"
+                  alt="Mashariki Energy Solar Installation"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2 border border-slate-700">
@@ -94,11 +149,13 @@ export default function Hero({ onOpenQuote }) {
 
         </div>
 
-        {/* Stats Bar */}
+        {/* Animated Counting Stats Bar */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((s, idx) => (
             <div key={idx} className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">
-              <p className="text-2xl sm:text-3xl font-extrabold text-emerald-600">{s.value}</p>
+              <p className="text-2xl sm:text-3xl font-extrabold text-emerald-600 font-mono">
+                <AnimatedCounter endValue={s.target} suffix={s.suffix} duration={2000} />
+              </p>
               <p className="text-xs font-semibold text-slate-600 mt-1">{s.label}</p>
             </div>
           ))}
