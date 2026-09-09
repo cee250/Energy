@@ -8,7 +8,7 @@ export default function Hero({ onOpenQuote }) {
   };
 
   return (
-    <section id="home" className="relative bg-[#f3f1e8] text-[#173f2b] overflow-hidden py-28 lg:py-36 border-b border-[#e2dfd2]">
+    <section id="home" className="relative bg-[#f3f1e8] text-[#173f2b] overflow-hidden py-16 sm:py-20 lg:py-28 border-b border-[#e2dfd2]">
       
       {/* Energy Solar Field Background Image Overlay (No Humans) */}
         <div className="absolute inset-0 z-0 opacity-40">
@@ -22,28 +22,28 @@ export default function Hero({ onOpenQuote }) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="grid lg:grid-cols-12 gap-12 items-center">
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Content */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
             
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e8f3bf] text-[#4d7b3a] text-xs font-extrabold uppercase tracking-widest border border-[#c9e86b]">
-              <Sun className="w-3.5 h-3.5 text-[#4d7b3a]" />
-              <span>// MASHARIKI ENERGY • EAST AFRICA</span>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#e8f3bf] text-[#4d7b3a] text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.12em] border border-[#c9e86b]">
+              <Sun className="w-3 h-3 text-[#4d7b3a]" />
+              <span>MASHARIKI ENERGY • EAST AFRICA</span>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-[#173f2b] tracking-[-0.04em] leading-[0.98]">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#173f2b] tracking-[-0.04em] leading-[1.02]">
               Turnkey <span className="text-[#79a94b]">solar power</span> for a brighter tomorrow
             </h1>
 
-            <p className="text-base sm:text-lg text-[#52645b] max-w-xl font-normal leading-relaxed">
+            <p className="text-sm sm:text-base text-[#52645b] max-w-xl font-normal leading-relaxed">
               <strong>Mashariki Energy</strong> delivers engineered solar panel installations, Commercial & Industrial (C&I) microgrids, and solar water pumping systems across East Africa.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-1">
               <button
                 onClick={onOpenQuote}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#173f2b] hover:bg-[#2c6445] text-white font-bold text-base px-8 py-4 rounded-full shadow-lg shadow-[#173f2b]/20 transition-all hover:scale-105"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#173f2b] hover:bg-[#2c6445] text-white font-bold text-sm px-6 py-3.5 rounded-full shadow-lg shadow-[#173f2b]/20 transition-all hover:scale-105"
               >
                 <span>Get Free Solar Proposal</span>
                 <ArrowRight className="w-4 h-4" />
@@ -51,13 +51,13 @@ export default function Hero({ onOpenQuote }) {
 
               <button
                 onClick={() => scrollTo('services')}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/70 hover:bg-white text-[#173f2b] font-bold text-base px-7 py-4 rounded-full border border-[#d3d5c8] backdrop-blur-sm transition-all"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/70 hover:bg-white text-[#173f2b] font-bold text-sm px-6 py-3.5 rounded-full border border-[#d3d5c8] backdrop-blur-sm transition-all"
               >
                 <span>Explore Services</span>
               </button>
             </div>
 
-            <div className="pt-6 border-t border-[#d3d5c8] grid grid-cols-2 gap-4 text-xs font-semibold text-[#52645b]">
+            <div className="pt-4 border-t border-[#d3d5c8] grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-4 text-[11px] sm:text-xs font-semibold text-[#52645b]">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-[#79a94b] shrink-0" />
                 <span>Tier-1 Monocrystalline Modules</span>
@@ -72,7 +72,7 @@ export default function Hero({ onOpenQuote }) {
 
           {/* Right Hero Image (Pure Energy Technology, NO humans) */}
           <div className="lg:col-span-5">
-            <div className="bg-white/75 border border-white rounded-[2rem] p-4 shadow-2xl backdrop-blur-md space-y-3 rotate-2 hover:rotate-0 transition-transform duration-500">
+            <div className="bg-white/75 border border-white rounded-[1.5rem] p-3 shadow-2xl backdrop-blur-md space-y-3 rotate-2 hover:rotate-0 transition-transform duration-500">
               <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-sm">
                 <img
                   src="/images/solar-hero.jpg"

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import TopBar from './components/TopBar';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
@@ -37,7 +36,6 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-slate-800 font-sans selection:bg-emerald-500 selection:text-white">
       {/* Header */}
-      <TopBar />
       <Navbar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
