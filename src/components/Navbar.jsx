@@ -41,7 +41,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
       className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-300 ${
         visible ? 'translate-y-0' : '-translate-y-full'
       } ${
-        scrolled ? 'bg-slate-100/95 backdrop-blur-md shadow-xs border-b border-slate-200/90 py-3' : 'bg-slate-100/90 border-b border-slate-200/80 py-4'
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-xs border-b border-slate-200 py-3' : 'bg-white border-b border-slate-200/80 py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -66,7 +66,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
               className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                 activeSection === link.id
                   ? 'bg-emerald-100/80 text-emerald-800 font-bold'
-                  : 'text-slate-700 hover:text-slate-900 hover:bg-slate-200/60'
+                  : 'text-slate-700 hover:text-slate-900 hover:bg-slate-100'
               }`}
             >
               {link.name}
@@ -94,7 +94,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
           </button>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-700 hover:text-slate-900 rounded-lg border border-slate-300"
+            className="p-2 text-slate-700 hover:text-slate-900 rounded-lg border border-slate-200"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -104,7 +104,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
 
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-slate-100 border-b border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-md">
+        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-md">
           {navLinks.map((link) => (
             <button
               key={link.id}
@@ -112,7 +112,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
               className={`w-full text-left px-3 py-2 rounded-lg text-xs font-medium ${
                 activeSection === link.id
                   ? 'bg-emerald-100 text-emerald-800 font-bold'
-                  : 'text-slate-700 hover:bg-slate-200'
+                  : 'text-slate-700 hover:bg-slate-100'
               }`}
             >
               {link.name}

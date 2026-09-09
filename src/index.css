@@ -7,16 +7,16 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-slate-100/90 text-slate-800 antialiased;
+    @apply bg-slate-50 text-slate-800 antialiased;
   }
 }
 
-/* Minimal Eye-Friendly Scrollbar */
+/* Elegant Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f8fafc;
 }
 ::-webkit-scrollbar-thumb {
   background: #cbd5e1;
