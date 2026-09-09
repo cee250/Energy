@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Building2, BatteryCharging, Droplets, Check } from 'lucide-react';
+import { Sun, Building2, BatteryCharging, Droplets, ArrowRight, Check } from 'lucide-react';
 
 export default function Services({ onOpenQuote }) {
   const serviceList = [
@@ -58,52 +58,54 @@ export default function Services({ onOpenQuote }) {
   ];
 
   return (
-    <section id="services" className="py-16 md:py-20 bg-slate-50 border-b border-slate-200">
+    <section id="services" className="py-20 md:py-28 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
-            Our Core Services
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-xs font-extrabold uppercase tracking-widest text-emerald-700 bg-emerald-100 px-3 py-1 rounded-md">
+            // OUR SERVICES & CAPABILITIES
           </span>
-          <h2 className="text-3xl font-extrabold text-slate-900 mt-3">
-            Mashariki Renewable Energy Solutions
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
+            Clean Energy Solutions for Every Sector
           </h2>
           <p className="mt-3 text-slate-600 text-base">
-            Engineered for commercial businesses, industrial facilities, resorts, and agricultural projects.
+            Engineered for commercial businesses, industrial facilities, eco-resorts, and agricultural projects.
           </p>
         </div>
 
-        {/* Service Cards */}
+        {/* Service Cards (Energia Style Elevated Cards with Top Accent Line) */}
         <div className="grid md:grid-cols-2 gap-8">
           {serviceList.map((s) => {
             const IconComp = s.icon;
             return (
-              <div key={s.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-5">
-                <div className="space-y-4">
-                  {/* SERVICE IMAGE */}
-                  <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-xs border border-slate-200 relative group">
-                    <img
-                      src={s.image}
-                      alt={s.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs text-emerald-800 px-2.5 py-1 rounded-md text-[11px] font-bold shadow-xs">
-                      {s.subtitle}
-                    </div>
+              <div key={s.id} className="bg-white rounded-2xl border border-slate-200/90 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden group border-t-4 border-t-emerald-600">
+                
+                {/* Image Top Banner */}
+                <div className="aspect-[16/9] overflow-hidden relative">
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 right-3 bg-slate-900/90 backdrop-blur-xs text-white px-3 py-1 rounded-md text-[11px] font-bold">
+                    {s.subtitle}
                   </div>
+                </div>
 
-                  {/* Service Text Details */}
+                {/* Content */}
+                <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-2 mb-1">
-                      <div className="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
-                        <IconComp className="w-4 h-4" />
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold shrink-0">
+                        <IconComp className="w-5 h-5" />
                       </div>
                       <h3 className="text-xl font-bold text-slate-900">{s.title}</h3>
                     </div>
-                    <p className="text-xs text-slate-600 mb-3 leading-relaxed">{s.description}</p>
 
-                    <div className="space-y-1.5 border-t border-slate-100 pt-3">
+                    <p className="text-xs text-slate-600 mb-4 leading-relaxed">{s.description}</p>
+
+                    <div className="space-y-2 border-t border-slate-100 pt-3">
                       {s.points.map((pt, pIdx) => (
                         <div key={pIdx} className="flex items-center gap-2 text-xs text-slate-700 font-medium">
                           <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
@@ -112,14 +114,16 @@ export default function Services({ onOpenQuote }) {
                       ))}
                     </div>
                   </div>
+
+                  <button
+                    onClick={onOpenQuote}
+                    className="w-full mt-4 text-center py-3 bg-slate-50 hover:bg-emerald-600 hover:text-white text-slate-800 font-bold text-xs rounded-xl border border-slate-200 transition-colors flex items-center justify-center gap-2 group-hover:bg-emerald-600 group-hover:text-white"
+                  >
+                    <span>Request Proposal</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
                 </div>
 
-                <button
-                  onClick={onOpenQuote}
-                  className="w-full text-center py-3 bg-slate-50 hover:bg-emerald-600 hover:text-white text-slate-700 font-bold text-xs rounded-xl border border-slate-200 transition-colors"
-                >
-                  Request Service Proposal →
-                </button>
               </div>
             );
           })}

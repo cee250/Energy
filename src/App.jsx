@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AboutUs from './components/AboutUs';
 import Services from './components/Services';
+import WhyChooseUs from './components/WhyChooseUs';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -26,19 +27,20 @@ export default function App() {
         onOpenQuote={openQuoteModal}
       />
 
-      {/* Main Content Sections (pt-16 accounts for fixed navbar) */}
+      {/* Main Content Sections */}
       <main className="pt-14">
         <Hero onOpenQuote={openQuoteModal} />
         <AboutUs />
         <Services onOpenQuote={openQuoteModal} />
+        <WhyChooseUs onOpenQuote={openQuoteModal} />
         <Projects onOpenQuote={openQuoteModal} />
         <Contact />
       </main>
 
-      {/* Compact Footer */}
+      {/* Footer */}
       <Footer />
 
-      {/* Quote Request Modal */}
+      {/* Quote Modal */}
       {isQuoteModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-fadeIn">
           <div className="relative w-full max-w-xl bg-white rounded-2xl border border-slate-200 shadow-2xl p-6 max-h-[90vh] overflow-y-auto">
@@ -54,13 +56,13 @@ export default function App() {
                 <Zap className="w-4 h-4" />
               </div>
               <span className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-                Renewable Energy Proposal
+                Mashariki Energy Proposal
               </span>
             </div>
 
             <h3 className="text-xl font-bold text-slate-900 mb-1">Request Proposal</h3>
             <p className="text-xs text-slate-500 mb-5">
-              Fill out your details to receive a customized solar proposal.
+              Fill out your details to receive a customized technical solar proposal.
             </p>
 
             <Contact isModal={true} onClose={closeQuoteModal} />
