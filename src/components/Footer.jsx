@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Phone, Mail } from 'lucide-react';
+import { Sun } from 'lucide-react';
 
 export default function Footer() {
   const scrollTo = (id) => {
@@ -8,7 +8,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white border-t border-slate-200 py-6 text-xs text-slate-600">
+    <footer className="bg-slate-200/80 border-t border-slate-300 py-6 text-xs text-slate-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
         
         {/* Brand & Copy */}
@@ -19,22 +19,22 @@ export default function Footer() {
           <div>
             <span className="font-bold text-slate-900">Mashariki Energy</span>
             <span className="text-slate-400 mx-2">|</span>
-            <span className="text-slate-500">© {new Date().getFullYear()} All Rights Reserved</span>
+            <span className="text-slate-600">© {new Date().getFullYear()} All Rights Reserved</span>
           </div>
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center gap-5 text-slate-600 font-medium">
-          <button onClick={() => scrollTo('home')} className="hover:text-emerald-600">Home</button>
-          <button onClick={() => scrollTo('about')} className="hover:text-emerald-600">About</button>
-          <button onClick={() => scrollTo('services')} className="hover:text-emerald-600">Services</button>
-          <button onClick={() => scrollTo('projects')} className="hover:text-emerald-600">Projects</button>
-          <button onClick={() => scrollTo('contact')} className="hover:text-emerald-600">Contact</button>
+        <div className="flex items-center gap-5 text-slate-700 font-medium">
+          <button onClick={() => scrollTo('home')} className="hover:text-emerald-700">Home</button>
+          <button onClick={() => scrollTo('about')} className="hover:text-emerald-700">About</button>
+          <button onClick={() => scrollTo('services')} className="hover:text-emerald-700">Services</button>
+          <button onClick={() => scrollTo('projects')} className="hover:text-emerald-700">Projects</button>
+          <button onClick={() => scrollTo('contact')} className="hover:text-emerald-700">Contact</button>
         </div>
 
         {/* Contact */}
-        <div className="flex items-center gap-4 text-slate-500 text-[11px]">
-          <span>+250 788 300 000</span>
+        <div className="flex items-center gap-4 text-slate-600 text-[11px]">
+          <span>0000000</span>
           <span>•</span>
           <span>info@mashariki-energy.com</span>
         </div>
