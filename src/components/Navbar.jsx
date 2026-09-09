@@ -1,30 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Sun, Menu, X } from 'lucide-react';
 
 export default function Navbar({ activeSection, setActiveSection, onOpenQuote }) {
-  const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [visible, setVisible] = useState(true);
-  const prevScrollPos = useRef(0);
   const navLinks = [
     { name: 'Home', id: 'home' },
     { name: 'About Us', id: 'about' },
     { name: 'Services', id: 'services' },
     { name: 'Projects', id: 'projects' },
-    { name: 'Contact', id: 'contact' },
   ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      setVisible(prevScrollPos.current > currentScrollPos || currentScrollPos < 40);
-      setScrolled(currentScrollPos > 20);
-      prevScrollPos.current = currentScrollPos;
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     const sections = navLinks
@@ -56,13 +40,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
   };
 
   return (
-    <header 
-      className={`fixed top-9 left-3 right-3 lg:left-8 lg:right-8 z-50 rounded-2xl transition-transform duration-300 ${
-        visible ? 'translate-y-0' : '-translate-y-full'
-      } ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-xl border border-slate-200 py-3' : 'bg-white/95 backdrop-blur-md shadow-lg border border-slate-200/80 py-4'
-      }`}
-    >
+    <header className="relative z-40 w-full bg-white border-b border-slate-200/80 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
         {/* Brand Logo */}
@@ -125,7 +103,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
 
       {/* Mobile Dropdown */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-md">
+        <div className="md:hidden bg-white border-t border-slate-100 px-4 pt-2 pb-4 space-y-1 shadow-md">
           {navLinks.map((link) => (
             <button
               key={link.id}

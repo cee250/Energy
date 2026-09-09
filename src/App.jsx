@@ -45,7 +45,7 @@ export default function App() {
       />
 
       {/* Main Content Sections */}
-      <main className="pt-14">
+        <main>
         <Hero onOpenQuote={openQuoteModal} />
         <AboutUs />
         <Services onOpenQuote={openQuoteModal} />
