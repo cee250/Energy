@@ -10,8 +10,6 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
-      
-      // Auto-hide when scrolling down, show when scrolling up or near top
       setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 40);
       setScrolled(currentScrollPos > 20);
       setPrevScrollPos(currentScrollPos);
@@ -21,7 +19,6 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
     return () => window.removeEventListener('scroll', handleScroll);
   }, [prevScrollPos]);
 
-  // Removed Calculator link
   const navLinks = [
     { name: 'Home', id: 'home' },
     { name: 'About Us', id: 'about' },
@@ -49,14 +46,14 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         
-        {/* Brand Logo */}
+        {/* Mashariki Energy Logo */}
         <button onClick={() => scrollToSection('home')} className="flex items-center gap-2.5 group text-left">
-          <div className="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold shadow-xs">
-            <Sun className="w-5 h-5" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-600 to-emerald-700 text-white flex items-center justify-center font-bold shadow-sm">
+            <Sun className="w-6 h-6" />
           </div>
           <div>
-            <span className="font-extrabold text-lg tracking-tight text-slate-900 block leading-none">AuraGrid</span>
-            <span className="text-[9px] font-bold text-emerald-700 tracking-wider uppercase">RENEWABLE ENERGY</span>
+            <span className="font-extrabold text-xl tracking-tight text-slate-900 block leading-none">Mashariki</span>
+            <span className="text-[10px] font-bold text-emerald-700 tracking-wider uppercase">ENERGY</span>
           </div>
         </button>
 
@@ -77,7 +74,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
           ))}
         </nav>
 
-        {/* CTA */}
+        {/* CTA Button */}
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={onOpenQuote}
@@ -87,7 +84,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
           </button>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile Toggle */}
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={onOpenQuote}
@@ -105,7 +102,7 @@ export default function Navbar({ activeSection, setActiveSection, onOpenQuote })
 
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1 shadow-lg">
           {navLinks.map((link) => (

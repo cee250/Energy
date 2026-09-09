@@ -1,11 +1,11 @@
 import React from 'react';
-import { Sun, ShieldCheck, ArrowRight, Building2, Image as ImageIcon, Upload } from 'lucide-react';
+import { Sun, ShieldCheck, ArrowRight, Building2 } from 'lucide-react';
 
 export default function Hero({ onOpenQuote }) {
   const stats = [
     { value: '185+ MW', label: 'Installed Capacity' },
-    { value: '420+', label: 'Commercial Projects' },
-    { value: '35%', label: 'Avg Energy Bill Cut' },
+    { value: '420+', label: 'Commercial Deployments' },
+    { value: '35%', label: 'Avg Utility Bill Cut' },
     { value: '25 Yrs', label: 'Panel Performance Warranty' }
   ];
 
@@ -20,19 +20,19 @@ export default function Hero({ onOpenQuote }) {
         
         <div className="grid lg:grid-cols-12 gap-10 items-center">
           
-          {/* Left Column: Copy & Actions */}
+          {/* Left Column */}
           <div className="lg:col-span-6 space-y-6 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/80 text-emerald-800 text-xs font-bold uppercase tracking-wider border border-emerald-200">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider border border-emerald-200">
               <Sun className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Solar & C&I Renewable Solutions</span>
+              <span>Mashariki Energy • Clean Power Solutions</span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              Powering Business with <span className="text-emerald-600">Clean Solar Energy</span>
+              Powering East Africa with <span className="text-emerald-600">Clean Solar Energy</span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 max-w-xl font-normal leading-relaxed">
-              End-to-end solar panel installations, Commercial & Industrial (C&I) microgrids, and energy storage systems designed for maximum financial ROI.
+              <strong>Mashariki Energy</strong> delivers turnkey solar PV installations, Commercial & Industrial (C&I) microgrids, and solar water pumping systems across Rwanda and East Africa.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-2">
@@ -40,7 +40,7 @@ export default function Hero({ onOpenQuote }) {
                 onClick={onOpenQuote}
                 className="w-full sm:w-auto flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base px-7 py-3.5 rounded-xl shadow-sm transition-colors"
               >
-                <span>Get Free Proposal</span>
+                <span>Get Free Solar Proposal</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
@@ -55,7 +55,7 @@ export default function Hero({ onOpenQuote }) {
             <div className="pt-4 border-t border-slate-200 grid grid-cols-2 gap-4 text-xs font-semibold text-slate-600">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Tier-1 Equipment Only</span>
+                <span>Tier-1 Monocrystalline Equipment</span>
               </div>
               <div className="flex items-center gap-2">
                 <Building2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -64,24 +64,21 @@ export default function Hero({ onOpenQuote }) {
             </div>
           </div>
 
-          {/* Right Column: Hero Image Frame Placeholder */}
+          {/* Right Column: Hero High-Res Real Solar Photo */}
           <div className="lg:col-span-6">
-            <div className="bg-white p-4 rounded-2xl border border-slate-200 shadow-md space-y-3">
-              {/* IMAGE PLACEHOLDER BOX */}
-              <div className="aspect-[16/10] rounded-xl border-2 border-dashed border-emerald-300 bg-emerald-50/40 flex flex-col items-center justify-center text-center p-6 transition-all hover:bg-emerald-50/70 group cursor-pointer">
-                <div className="w-14 h-14 rounded-2xl bg-white border border-emerald-200 flex items-center justify-center text-emerald-600 shadow-sm mb-3 group-hover:scale-105 transition-transform">
-                  <ImageIcon className="w-7 h-7" />
+            <div className="bg-white p-3 rounded-2xl border border-slate-200 shadow-md space-y-3">
+              <div className="aspect-[16/10] rounded-xl overflow-hidden relative shadow-sm">
+                <img
+                  src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+                  alt="Mashariki Energy Commercial Solar Installation"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-sm text-white px-3 py-1.5 rounded-lg text-xs font-medium flex items-center gap-2 border border-slate-700">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                  <span>Commercial Solar PV Array • Mashariki Energy</span>
                 </div>
-                <h4 className="font-bold text-slate-900 text-sm">Hero Banner Image Placeholder</h4>
-                <p className="text-xs text-slate-500 mt-1 max-w-xs">
-                  Insert Commercial Solar Rooftop / Installation Photo here (Recommended: 1200 x 750px)
-                </p>
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-700 bg-white border border-emerald-200 px-3 py-1 rounded-full mt-3 shadow-xs">
-                  <Upload className="w-3 h-3" /> Ready for Image Upload
-                </span>
               </div>
 
-              {/* Overlay Stat Summary */}
               <div className="grid grid-cols-2 gap-2 text-xs">
                 <div className="p-3 bg-slate-50 rounded-lg border border-slate-100 text-center">
                   <span className="text-slate-500 block text-[11px]">System Reliability</span>
@@ -97,7 +94,7 @@ export default function Hero({ onOpenQuote }) {
 
         </div>
 
-        {/* Stats Grid */}
+        {/* Stats Bar */}
         <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
           {stats.map((s, idx) => (
             <div key={idx} className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm text-center">

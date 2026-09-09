@@ -24,9 +24,9 @@ export default function Contact({ isModal, onClose }) {
           <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
             <CheckCircle2 className="w-8 h-8" />
           </div>
-          <h3 className="text-xl font-bold text-slate-900">Proposal Request Received!</h3>
+          <h3 className="text-xl font-bold text-slate-900">Murakoze! Proposal Request Received</h3>
           <p className="text-slate-600 text-xs max-w-sm mx-auto">
-            Thank you, {formData.name || 'Valued Client'}. Our engineering team will review your inquiry and respond within 4 business hours.
+            Thank you, {formData.name || 'Valued Client'}. Our Mashariki Energy engineering team will review your inquiry and respond within 4 business hours.
           </p>
           <button
             onClick={() => {
@@ -74,7 +74,7 @@ export default function Contact({ isModal, onClose }) {
                 required
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                placeholder="Phone Number"
+                placeholder="Phone Number (+250...)"
                 className="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-600"
               />
             </div>
@@ -110,7 +110,7 @@ export default function Contact({ isModal, onClose }) {
             className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-sm text-sm transition-colors"
           >
             <Send className="w-4 h-4" />
-            <span>Send Request</span>
+            <span>Send Request to Mashariki Energy</span>
           </button>
         </form>
       )}
@@ -120,39 +120,39 @@ export default function Contact({ isModal, onClose }) {
   if (isModal) return formContent;
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-white border-b border-slate-100">
+    <section id="contact" className="py-16 md:py-20 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
-            Get In Touch
+          <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100 px-3 py-1 rounded-full">
+            Contact Us
           </span>
           <h2 className="text-3xl font-extrabold text-slate-900 mt-3">
-            Contact Our Renewable Energy Team
+            Get In Touch With Mashariki Energy
           </h2>
           <p className="mt-3 text-slate-600 text-base">
-            Reach out for technical consultations, quote requests, or on-site audits.
+            Reach out for technical consultations, site audits, or solar quote requests.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 max-w-5xl mx-auto">
           
           <div className="lg:col-span-5 bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-6">
-            <h3 className="text-lg font-bold text-slate-900">Direct Contact Details</h3>
+            <h3 className="text-lg font-bold text-slate-900">Kigali Headquarters</h3>
 
             <div className="space-y-4 text-xs">
               <div className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Office Location</span>
-                  <span className="text-slate-600">Renewable Energy Hub & Operations</span>
+                  <span className="text-slate-600">Mashariki Energy • Kigali, Rwanda</span>
                 </div>
               </div>
 
               <div className="flex items-start gap-3">
                 <Phone className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
-                  <span className="font-bold text-slate-900 block">Phone</span>
+                  <span className="font-bold text-slate-900 block">Direct Phone</span>
                   <span className="text-slate-600">+250 788 300 000</span>
                 </div>
               </div>
@@ -161,14 +161,14 @@ export default function Contact({ isModal, onClose }) {
                 <Mail className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Email</span>
-                  <span className="text-slate-600">info@energy.com</span>
+                  <span className="text-slate-600">info@mashariki-energy.com</span>
                 </div>
               </div>
             </div>
           </div>
 
           <div className="lg:col-span-7 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-            <h3 className="text-lg font-bold text-slate-900 mb-4">Send a Quote Request</h3>
+            <h3 className="text-lg font-bold text-slate-900 mb-4">Send a Proposal Request</h3>
             {formContent}
           </div>
 

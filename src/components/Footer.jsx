@@ -17,13 +17,13 @@ export default function Footer() {
             <Sun className="w-4 h-4" />
           </div>
           <div>
-            <span className="font-bold text-slate-900">AuraGrid Energy</span>
+            <span className="font-bold text-slate-900">Mashariki Energy</span>
             <span className="text-slate-400 mx-2">|</span>
             <span className="text-slate-500">© {new Date().getFullYear()} All Rights Reserved</span>
           </div>
         </div>
 
-        {/* Minimal Navigation */}
+        {/* Navigation */}
         <div className="flex items-center gap-5 text-slate-600 font-medium">
           <button onClick={() => scrollTo('home')} className="hover:text-emerald-600">Home</button>
           <button onClick={() => scrollTo('about')} className="hover:text-emerald-600">About</button>
@@ -32,11 +32,11 @@ export default function Footer() {
           <button onClick={() => scrollTo('contact')} className="hover:text-emerald-600">Contact</button>
         </div>
 
-        {/* Direct Contact */}
+        {/* Contact */}
         <div className="flex items-center gap-4 text-slate-500 text-[11px]">
           <span>+250 788 300 000</span>
           <span>•</span>
-          <span>info@energy.com</span>
+          <span>info@mashariki-energy.com</span>
         </div>
 
       </div>

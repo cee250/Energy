@@ -8,16 +8,16 @@ export default function TopBar() {
         <div className="flex items-center gap-6">
           <a href="tel:+250788300000" className="flex items-center gap-1.5 hover:text-emerald-600 transition-colors">
             <Phone className="w-3.5 h-3.5 text-emerald-600" />
-            <span className="font-medium">+250 788 300 000</span>
+            <span className="font-semibold">+250 788 300 000</span>
           </a>
-          <a href="mailto:info@energy.com" className="flex items-center gap-1.5 hover:text-emerald-600 transition-colors">
+          <a href="mailto:info@mashariki-energy.com" className="flex items-center gap-1.5 hover:text-emerald-600 transition-colors">
             <Mail className="w-3.5 h-3.5 text-emerald-600" />
-            <span>info@energy.com</span>
+            <span>info@mashariki-energy.com</span>
           </a>
         </div>
         <div className="flex items-center gap-1.5 text-slate-500">
           <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-          <span>Renewable Energy & C&I Solutions Hub</span>
+          <span>Mashariki Energy • Kigali, Rwanda & East Africa</span>
         </div>
       </div>
     </div>

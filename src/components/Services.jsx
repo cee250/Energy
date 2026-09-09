@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Building2, BatteryCharging, Droplets, Image as ImageIcon, Check } from 'lucide-react';
+import { Sun, Building2, BatteryCharging, Droplets, Check } from 'lucide-react';
 
 export default function Services({ onOpenQuote }) {
   const serviceList = [
@@ -9,7 +9,7 @@ export default function Services({ onOpenQuote }) {
       title: 'Solar Panel Installation',
       subtitle: 'Commercial & Residential Photovoltaic PV',
       description: 'Turnkey solar design, equipment procurement, and rooftop installation using monocrystalline Tier-1 modules.',
-      imageTag: '📷 Solar Panel Installation Photo Placeholder (16:9)',
+      image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&w=800&q=80',
       points: [
         'High-Yield PV Modules (>22.5% Efficiency)',
         'Commercial Rooftop & Ground-Mount',
@@ -22,7 +22,7 @@ export default function Services({ onOpenQuote }) {
       title: 'C&I Microgrids & PPAs',
       subtitle: 'Zero-CAPEX Power Purchase Agreements',
       description: 'Fully financed megawatt solar installations for commercial enterprises and industrial manufacturing facilities.',
-      imageTag: '📷 Commercial Industrial Microgrid Photo Placeholder (16:9)',
+      image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80',
       points: [
         '$0 Upfront Capital Investment',
         '20–40% Energy Tariff Discount',
@@ -35,7 +35,7 @@ export default function Services({ onOpenQuote }) {
       title: 'Battery Energy Storage (BESS)',
       subtitle: '24/7 Power Reserve & Night Displacement',
       description: 'Scalable Lithium Iron Phosphate (LiFePO4) battery storage systems that store daytime solar energy for night shifts.',
-      imageTag: '📷 Battery Storage (BESS) Array Photo Placeholder (16:9)',
+      image: 'https://images.unsplash.com/photo-1558441719-67450885d2b6?auto=format&fit=crop&w=800&q=80',
       points: [
         'Storage Capacity 100 kWh to 50+ MWh',
         'Uninterruptible Power Supply (UPS)',
@@ -48,7 +48,7 @@ export default function Services({ onOpenQuote }) {
       title: 'Solar Water Pumping',
       subtitle: 'Agricultural Irrigation & Water Supply',
       description: 'High-head DC and AC solar powered water pumps engineered for agricultural irrigation and community water supply.',
-      imageTag: '📷 Solar Water Pumping System Photo Placeholder (16:9)',
+      image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=800&q=80',
       points: [
         'Zero Fuel Expenses for Farmers',
         'High-Flow Submersible Pumps',
@@ -67,29 +67,30 @@ export default function Services({ onOpenQuote }) {
             Our Core Services
           </span>
           <h2 className="text-3xl font-extrabold text-slate-900 mt-3">
-            Renewable Energy Solutions
+            Mashariki Renewable Energy Solutions
           </h2>
           <p className="mt-3 text-slate-600 text-base">
             Engineered for commercial businesses, industrial facilities, resorts, and agricultural projects.
           </p>
         </div>
 
-        {/* Service Cards with Image Placeholders */}
+        {/* Service Cards */}
         <div className="grid md:grid-cols-2 gap-8">
           {serviceList.map((s) => {
             const IconComp = s.icon;
             return (
               <div key={s.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-5">
                 <div className="space-y-4">
-                  {/* SERVICE IMAGE PLACEHOLDER SLOT */}
-                  <div className="aspect-[16/9] rounded-xl border-2 border-dashed border-slate-300 bg-slate-50 flex flex-col items-center justify-center text-center p-4 hover:border-emerald-500 transition-colors group cursor-pointer">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-emerald-600 shadow-xs mb-2 group-hover:scale-105 transition-transform">
-                      <ImageIcon className="w-5 h-5" />
+                  {/* SERVICE IMAGE */}
+                  <div className="aspect-[16/9] rounded-xl overflow-hidden shadow-xs border border-slate-200 relative group">
+                    <img
+                      src={s.image}
+                      alt={s.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-xs text-emerald-800 px-2.5 py-1 rounded-md text-[11px] font-bold shadow-xs">
+                      {s.subtitle}
                     </div>
-                    <p className="text-xs font-bold text-slate-800">{s.imageTag}</p>
-                    <span className="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded mt-2">
-                      Image Slot (Replace with Service Photo)
-                    </span>
                   </div>
 
                   {/* Service Text Details */}
@@ -100,7 +101,6 @@ export default function Services({ onOpenQuote }) {
                       </div>
                       <h3 className="text-xl font-bold text-slate-900">{s.title}</h3>
                     </div>
-                    <p className="text-xs font-semibold text-emerald-700 mb-2">{s.subtitle}</p>
                     <p className="text-xs text-slate-600 mb-3 leading-relaxed">{s.description}</p>
 
                     <div className="space-y-1.5 border-t border-slate-100 pt-3">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Droplets, Factory, MapPin, Image as ImageIcon } from 'lucide-react';
+import { Sun, Droplets, Factory, MapPin } from 'lucide-react';
 
 export default function Projects({ onOpenQuote }) {
   const projects = [
@@ -10,27 +10,27 @@ export default function Projects({ onOpenQuote }) {
       capacity: '3.4 MWp PV + 6 MWh Storage',
       type: 'Zero-CAPEX PPA',
       icon: Factory,
-      imageTag: '📷 Logistics Hub Rooftop Solar Photo (16:10)',
+      image: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=800&q=80',
       desc: 'Commercial rooftop solar installation covering 450,000 sq.ft with peak shaving and grid net-metering.'
     },
     {
       id: 'agri-water',
       title: 'Agricultural Solar Water Pumping System',
-      location: 'Kirehe District / Rural Zone',
+      location: 'Kirehe District / Agricultural Zone',
       capacity: '75 kWp Pumping Array',
       type: 'Agri Irrigation',
       icon: Droplets,
-      imageTag: '📷 Solar Water Pumping System Photo (16:10)',
+      image: 'https://images.unsplash.com/photo-1595838788459-6ab361b2b960?auto=format&fit=crop&w=800&q=80',
       desc: 'High-capacity solar water pumping system delivering clean irrigation water to farming cooperatives.'
     },
     {
       id: 'resort',
-      title: 'Ma Campagne Eco-Resort Solar Power',
+      title: 'Lake Muhazi Resort Solar Power',
       location: 'Lake Muhazi Waterfront',
       capacity: '25 kWp PV + Off-Grid Storage',
       type: 'Hospitality Solar',
       icon: Sun,
-      imageTag: '📷 Eco-Resort Off-Grid Solar Photo (16:10)',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80',
       desc: 'Off-grid solar installation powering resort operations, water heating, and lighting with 100% clean power.'
     }
   ];
@@ -59,30 +59,22 @@ export default function Projects({ onOpenQuote }) {
             return (
               <div key={p.id} className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
-                  {/* PROJECT IMAGE PLACEHOLDER SLOT */}
-                  <div className="aspect-[16/10] rounded-xl border-2 border-dashed border-slate-300 bg-white flex flex-col items-center justify-center text-center p-3 hover:border-emerald-500 transition-colors group cursor-pointer">
-                    <div className="w-8 h-8 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-emerald-600 mb-1 group-hover:scale-105 transition-transform">
-                      <ImageIcon className="w-4 h-4" />
+                  {/* PROJECT IMAGE THUMBNAIL */}
+                  <div className="aspect-[16/10] rounded-xl overflow-hidden shadow-xs border border-slate-200 relative group">
+                    <img
+                      src={p.image}
+                      alt={p.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-2.5 right-2.5 bg-slate-900/80 text-white px-2 py-0.5 rounded text-[10px] font-bold">
+                      {p.type}
                     </div>
-                    <p className="text-[11px] font-bold text-slate-800">{p.imageTag}</p>
-                    <span className="text-[9px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded mt-1">
-                      Project Thumbnail
-                    </span>
                   </div>
 
                   {/* Project Details */}
                   <div>
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="w-8 h-8 rounded-lg bg-white border border-slate-200 flex items-center justify-center text-emerald-600 shadow-xs">
-                        <IconComp className="w-4 h-4" />
-                      </div>
-                      <span className="text-[11px] font-bold text-emerald-700 bg-emerald-100 px-2.5 py-0.5 rounded-full">
-                        {p.type}
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-1 text-[11px] font-semibold text-slate-500 mb-1">
-                      <MapPin className="w-3 h-3 text-emerald-600" />
+                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-slate-500 mb-1">
+                      <MapPin className="w-3.5 h-3.5 text-emerald-600" />
                       <span>{p.location}</span>
                     </div>
 
