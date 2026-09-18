@@ -3,44 +3,22 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  body {
-    @apply bg-slate-50 text-slate-800 antialiased;
-  }
+  html { scroll-behavior: smooth; }
+  body { @apply bg-[#f7f8f5] text-slate-800 antialiased; }
+  :focus-visible { outline: 2px solid #c9e86b; outline-offset: 3px; }
+}
 
-  :focus-visible {
-    outline: 2px solid #059669;
-    outline-offset: 3px;
-  }
+@layer components {
+  .eyebrow { @apply text-xs font-bold uppercase tracking-[0.18em] text-emerald-700; }
+  .eyebrow-dark { @apply text-[#c9e86b]; }
+  .section-title { @apply mt-3 text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-[-0.035em] leading-[1.08] text-slate-950; }
+  .field { @apply block; }
+  .field span { @apply block mb-1.5 text-xs font-bold uppercase tracking-wide text-slate-500; }
+  .field input, .field select, .field textarea { @apply w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-800 transition-colors focus:border-emerald-600 focus:bg-white focus:outline-none; }
+  .field textarea { @apply resize-y; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-/* Elegant Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f8fafc;
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #059669;
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
