@@ -145,7 +145,7 @@ export default function Contact({ isModal, onClose }) {
                 <MapPin className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Office Location</span>
-                  <span className="text-slate-600">Mashariki Energy • Kigali, Rwanda</span>
+                  <span className="text-slate-600">Centenary House KN 72, 5th Floor</span>
                 </div>
               </div>
 
@@ -153,7 +153,7 @@ export default function Contact({ isModal, onClose }) {
                 <Phone className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Direct Phone</span>
-                  <span className="text-slate-600">0000000</span>
+                  <span className="text-slate-600">0788308619 · 0788595334</span>
                 </div>
               </div>
 
